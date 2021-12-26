@@ -1,0 +1,31 @@
+.discount {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.discount-date {
+  align-self: center;
+  margin-bottom: 27px;
+}
+
+.discount-date__text {
+  margin: 0;
+  @include text-style ("Manrope", 18px, 25px);
+  text-align: center;
+}
+
+.discount-date__list {
+  @include list ();
+  display: grid;
+  grid-template-columns: repeat(3,auto);
+  column-gap: 10px;
+}
+
+.discount-date__item {
+  @include text-style ();
+}
+
+.discount-date__item-icon {
+  margin-left: 10px;
+}

@@ -1,0 +1,113 @@
+.price {
+  display: grid;
+  grid-template-columns: min-content 1fr 100px;
+  column-gap: 33px;
+  position: relative;
+
+  @media (max-width: 1600px) {
+    grid-template-columns: min-content 1fr min-content;
+    column-gap: 28px;
+    margin-bottom: 2px;
+  }
+
+  @media (max-width: 414px) {
+   column-gap: 40px;
+   grid-template-columns: min-content 110px auto;
+  }
+
+  @media (max-width: 320px) {
+    column-gap: 15px;
+  }
+}
+
+.price__text-inner {
+  display: flex;
+  background: linear-gradient(89.91deg, $peachy-strong-salmon -8.26%, $coppery-hints 144.55%);
+  box-shadow: -6px -6px 16px rgba(255, 255, 255, 0.6), 6px 9px 40px $steel;
+  border-radius: 12px;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  max-width: 46px;
+  min-height: 130px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(83deg, $white, $cinnabar);
+    border-radius: 12px;
+    z-index: -1;
+  }
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
+}
+
+.price__text {
+  @include text-style ("Open Sans", 18px, 24px, 300);
+  color: $white;
+  margin: 0;
+  transform: rotate(-90deg);
+  box-sizing: border-box;
+  min-width: 130px;
+  text-align: center;
+  padding: 11px 5px;
+}
+
+.price__img {
+  justify-self: center;
+  max-width: 110px;
+
+  @media (max-width: 1600px) {
+    //justify-self: auto;
+
+    & img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.price__list {
+  margin: 0;
+  align-self: center;
+
+  @media (max-width: 1600px) {
+    justify-self: end;
+  }
+
+  @media (max-width: 414px) {
+    justify-self: start;
+  }
+}
+
+.price__inner dt {
+  @include text-style ("Open Sans", 10px, 14px, normal);
+  color: $gray-022;
+}
+
+.price__inner dd {
+  margin: 0;
+  @include text-style ();
+  color: $gray-022;
+
+  @media (max-width: 768px) {
+    letter-spacing: -1px;
+  }
+}
+
+.price__inner {
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.price__inner--new dd {
+  color: $cinnabar;
+}

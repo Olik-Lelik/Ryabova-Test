@@ -1,0 +1,13 @@
+@mixin list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin text-style ($ff: "Manrope", $fs: 36px, $lh: 49px, $fw: bold) {
+  font-family: $ff;
+  font-size: $fs;
+  line-height: $lh;
+  //letter-spacing: $ls;
+  font-weight: $fw;
+}

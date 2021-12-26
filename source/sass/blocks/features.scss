@@ -1,0 +1,137 @@
+.features {
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+  justify-self: flex-end;
+  max-width: 786px;
+  width: 100%;
+  z-index: 5;
+  padding-top: 234px;
+  padding-right: 23px;
+  box-sizing: border-box;
+
+  @media (max-width: 1600px) {
+    grid-column: 1 / -1;
+    grid-row: 2 / -1;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  @media (max-width: 745px) {
+    margin-bottom: 40px;
+  }
+}
+
+.features__list {
+  @include list ();
+  display: grid;
+
+  @media (max-width: 1600px) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 100px;
+    row-gap: 20px;
+  }
+
+  @media (max-width: 1080px) {
+    column-gap: 0;
+  }
+
+  @media (max-width: 986px) {
+    column-gap: 21px;
+  }
+
+  @media (max-width: 745px) {
+    padding: 0 20px;
+    grid-template-columns: auto;
+  }
+}
+
+.features__item {
+  display: flex;
+  justify-self: flex-start;
+  padding: 16px 20px;
+  background: linear-gradient(154.95deg, $alabaster-marble 12.66%, $white 86.7%);
+  box-shadow: 25px 28px 66px rgba(176, 195, 210, 0.727846);
+  border-radius: 60px;
+  box-sizing: border-box;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    background: linear-gradient(270deg, $marble-white, $white);
+    border-radius: 60px;
+    z-index: -1;
+  }
+
+  &:nth-child(even) {
+    justify-self: end;
+  }
+
+  &:first-child {
+    margin-left: 34px;
+    margin-bottom: 29px;
+  }
+
+  &:nth-child(2) {
+    margin-bottom: 86px;
+  }
+
+  &:last-child {
+    margin-right: 41px;
+    margin-top: -4px;
+  }
+
+  @media (max-width: 1600px) {
+    justify-self: auto;
+
+    &:nth-child(even) {
+      justify-self: auto;
+    }
+
+    &:first-child {
+      margin: 0;
+    }
+
+    &:nth-child(2) {
+      margin: 0;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 1080px) {
+    min-width: 400px;
+    justify-self: center;
+
+    &:nth-child(even) {
+      justify-self: center;
+    }
+  }
+
+  @media (max-width: 986px) {
+    min-width: min-content;
+    justify-self: auto;
+
+    &:nth-child(even) {
+      justify-self: auto;
+    }
+  }
+}
+
+.features__img {
+  order: -1;
+  margin-right: 10px;
+}
+
+.features__text {
+  @include text-style ("Open Sans", 14px, 19px, 0.005em);
+  color: $gray;
+  margin: 0;
+  align-self: center;
+}
