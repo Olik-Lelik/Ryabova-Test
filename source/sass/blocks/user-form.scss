@@ -84,7 +84,7 @@
   border-radius: 12px;
 }
 
-.user-form__item:hover:before,
+.user-form__item:hover::before,
 .user-form__item:focus-within::before {
   background: none;
 }
@@ -100,6 +100,7 @@
 .user-form__item-name:focus-within::after {
   content: "Name";
   position: absolute;
+
   @include text-style ("Open Sans", 12px, 14px, normal);
   color: inherit;
   background: $alabaster-strong-shades;
@@ -113,6 +114,7 @@
 .user-form__item-phone:focus-within::after {
   content: "Phone";
   position: absolute;
+
   @include text-style ("Open Sans", 12px, 14px, normal);
   color: inherit;
   background: $alabaster-strong-shades;
@@ -122,7 +124,6 @@
   left: 15px;
   z-index: 2;
 }
-
 
 .user-form__fieldset {
   margin: 0 0 50px;
@@ -156,7 +157,7 @@
 .user-form__input-checkbox:checked + .user-form__label-checkbox::after {
   content: "";
   position: absolute;
-  background-image: url(../../img/tick.svg);
+  background-image: url("../img/tick.svg");
   width: 12px;
   height: 10px;
   top: 9px;
